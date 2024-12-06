@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #quote-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #quote {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quote-container">
+        <p id="quote"></p>
+        <button onclick="generateRandomQuote()">New Quote</button>
+    </div>
+
+</body>
+<script>
+    // Step 1: Create an array of quotes
+        const quotes = [
+            "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+            "Do not wait to strike till the iron is hot; but make it hot by striking. - William Butler Yeats",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "Act as if what you do makes a difference. It does. - William James",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+        ];
+
+        // Step 2: Function to generate a random quote
+        function generateRandomQuote() {
+            // Generate a random index
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+
+            // Display the random quote in the designated element
+            document.getElementById("quote").textContent = quotes[randomIndex];
+        }
+
+        // Step 3: Automatically load a random quote on page load
+        document.addEventListener("DOMContentLoaded", generateRandomQuote);
+
+</script>
+</html>
